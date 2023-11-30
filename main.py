@@ -28,13 +28,16 @@ score = 0;
 while len(guessed_states) <= 50:
 
     answer_state = screen.textinput(title=f"Guess the state {score}/50 states guessed ", prompt="Whats a states name?").title();
+    
+
     if answer_state == "Exit":
-        list_to_learn = {
-            "states": []
-        }
-        for s in state_list:
-            if s not in guessed_states:
-                list_to_learn["states"].append(s);
+        list_to_learn = [state for state in state_list if state not in guessed_states];
+        # list_to_learn = {
+        #     "states": []
+        # }
+        # for s in state_list:
+        #     if s not in guessed_states:
+        #         list_to_learn["states"].append(s);
         
 
         print(list_to_learn)
